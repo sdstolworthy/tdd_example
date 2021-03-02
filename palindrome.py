@@ -7,19 +7,16 @@ def _convert_to_string(subject: any) -> str:
         return str(subject).replace('.','')
     raise TypeError('%s is not a supported type' % type(subject))
     
-
-
 def _verify_str_is_palindrome(subject: str) -> bool:
-    if subject[::-1] == subject:
-        return True
-    return False
+    if len(subject) < 2:
+        return False
+    return subject[::-1] == subject
 
-
+def _normalize_str(string: str) -> str:
+    return string.lower().strip()
 
 def is_palindrome(subject: any) -> bool:
     if type(subject) != str:
         subject = _convert_to_string(subject)
-    if len(subject) < 2:
-        return False
-    subject = subject.lower()
+    subject = _normalize_str(subject)
     return _verify_str_is_palindrome(subject)
