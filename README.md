@@ -13,6 +13,7 @@ alphanumeric palindromes (both words and numbers).
 - [ ] A number that reads backwards and forwards the same, ignoring any decimals or commas, is a palindrome
 - [ ] Case should be ignored
 - [ ] Single-character entities are not palindromes
+- [ ] Any input that is neither a string nor a number should result in an error
 
 ### Examples
 
